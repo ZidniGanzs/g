@@ -115,7 +115,7 @@ const family = JSON.parse(fs.readFileSync('./src/family100.json'))
 const tebakanime = JSON.parse(fs.readFileSync('./src/tebakanime.json'))
 const  sewa = JSON.parse(fs.readFileSync('./src/sewa.json'));
 
-//var creatorList = ['Creator WhatsApp Bot', 'Whatsapp Bot Indonesia', 'Creator Bot' , ' Bot WhatsApp']
+//var creatorList = ['WhatsApp Bot']
 var creator = setting.ownername
 const  { ind, eng, es, ml, ru, pt } = require(`./language`)
 lang = ind //language
@@ -157,9 +157,9 @@ fthumb = setting.fakethumb
 hit_today = []
 blocked = []
 ban = []
-limitawal = "50"
-gcounttprem = "55" 
-gcounttuser = "100" 
+limitawal = "10"
+gcounttprem = "5" 
+gcounttuser = "10" 
 
 let multi = true
 let nopref = false
@@ -178,7 +178,7 @@ readPc = false
 antitrol = true 
 bugc = true
 autovn = true
-autoketik = false
+autoketik = true
 autoregister = setting.user_register
 
 let _diamond1 = '⦿ 1500 Diamonds';     let diamond1 = 'Rp 50.000,00';
@@ -195,8 +195,8 @@ let _diamond11 = '⦿ M.MINGGUAN';      let diamond11 = 'Rp 30.000,00';
 let _diamond12 = '⦿ M.BULANAN';         let diamond12 = 'Rp 110.000,00';
 
 img = setting.img
-baper = 'SUB YT ZEEONE OFC'
-apiku = 'https://youtu.be/2rWbjrDIAyA'
+baper = 'Ihh Wibu'
+apiku = ' '
 gc_wa_lu = 'https://chat.whatsapp.com/EU890BcXjyBDkNaUT5WmYV' //klo gk punya gc wa gk usah di ganti 👍
 targetpc = setting.ownerNumberr
 owner = targetpc
@@ -771,12 +771,12 @@ if (autobio === false) return
     if (new Date() * 1 - settingstatus > 1000) {
       let _uptime = process.uptime() * 1000;
       let uptimer = clockString(_uptime);
-      await alpha.setStatus(`I'm Userbot 🤖 | Runtime ${uptimer} ⏰ | ${status}`).catch((_) => _);
+      await alpha.setStatus(`Runtime ${uptimer} ⏰ | ${status}`).catch((_) => _);
       settingstatus = new Date() * 1;
     }}
 		mess = {
-			wait: '```[ ! ] Proses kak...```',
-			success: '```[ ✓ ]``` Success',
+			wait: 'Tunggu Bang',
+			success: 'Success',
 			wrongFormat: 'Format salah, coba liat lagi di menu',
 			error: {
 				stick: 'Itu bukan stiker',
@@ -1626,7 +1626,7 @@ reply(`Pembeliaan game limit sebanyak ${q} berhasil
 *💷 Sisa Game Limit : ${cekGLimit(sender, gcount, glimit)} / ${gcount}*`)
 }
 break
-	case 'me': case 'myinfo': case 'info': case 'profile': case 'profil':{
+	case 'menu':{
 let cek = ms( await premium.getPremiumExpired(sender, premium) - Date.now())
 let userProcfile = `「 *USER INFO* 」
 
@@ -1646,19 +1646,19 @@ let userProcfile = `「 *USER INFO* 」
 ⏰ Expired Prem : ${cek.days} d, ${cek.hours} h, ${cek.minutes} m, ${cek.seconds} s`: isRegister?`Free User`:`Belum Daftar`}
 🚫 Baned : ${isBanned?`True`:`False`}`
 let papakpo = [{
-										"buttonId": `menu`,
+										"buttonId": `Command`,
 										"buttonText": {
 											"displayText": "MENU"
 											},
 										"type": "RESPONSE"
 										},{
-										"buttonId": `sewabot`,
+										"buttonId": `rules`,
 										"buttonText": {
-											"displayText": "SEWA"
+											"displayText": "RULES"
 											},
 										"type": "RESPONSE"
 										}]
-								sendButLocation(from, userProcfile , `NOTE ！\nJika whatsapp mod kamu belum support button silahkan tonton video ini https://youtu.be/ERGID4Fmo9w\n\n${botname}™© | By ${ownername}`,pp_userz, papakpo, {contextInfo: { mentionedJid: [sender]}})
+								sendButLocation(from, userProcfile , `NOTE ！\nJika whatsapp mod kamu belum support button silakan ketik ${prefix}allmenu`,pp_userz, papakpo, {contextInfo: { mentionedJid: [sender]}})
 }
 break
 	case 'verify': case 'daftar':
@@ -1681,9 +1681,9 @@ let papako = [{
 											},
 										"type": "RESPONSE"
 										}]
-								sendButLocation(from, teks , `Thank for verification 💋\n${botname}™© | By ${ownername}`,pp_userz, papako, {contextInfo: { mentionedJid: [sender]}})
+								sendButLocation(from, teks , `Thank for verification 💋`,pp_userz, papako, {contextInfo: { mentionedJid: [sender]}})
                 break
-	case 'menu': case 'help':
+	case 'menu1': case 'hwelp':
 			try {
 				chatt = await alpha.getProfilePicture(sender)
 				} catch {
@@ -1698,35 +1698,22 @@ let p1 = await alpha.getStatus(sender)
 anunya = process.uptime()
 ini_anu =`${ucapannya2} @${sender.split('@')[0]}
 
-┏━⬣ *BOT INFO*
-┃
-┃⬡ Creator : _@${koko.split('@')[0]}_
-┃⬡ Powered  : _@${ini_mark.split('@')[0]}_
-┃⬡ Mode : _${banChats ? 'SELF-MODE' : 'PUBLIC-MODE'}_
-┃⬡ Status : _${offline ? 'OFFLINE' : 'ONLINE'}_
-┃⬡ Prefix :  _${prefix}_
-┃⬡ Group Chat : _${giid.length}_
-┃⬡ Private Chat : _${totalchat.length - giid.length}_
-┃⬡ Total Chat : _${totalchat.length}_
-┃⬡ Lib  : _Baileys_
-┃⬡ Type  : _NodeJs_
-┃⬡ Total hit : _${hitall}_
-┃⬡ Hit today : _${hit_today.length}_
-┃⬡ Speed : _${latensii.toFixed(4)} Second_
-┃⬡ Runtime : _${kyun(anunya)}_
-┃⬡ Battery : _${isBattre}_
-┃⬡ Charging : _${isCharge}_
-┗⬣
-
-┏━⬣ *YOUR INFO*
-┃
-┃⬡ Name : _${pushname}_
-┃⬡ Bio : _${p1 ? `${p1.status}` : '-'}_
-┃⬡ Nomor : _@${sender.split('@')[0]}_
-┃⬡ Me : _${mek.key.fromMe ? 'True' : 'False'}_
-┃⬡ Owner : _${isOwner ? 'True' : `False`}_
-┃⬡ CoOwner : _${isCoOwner ? 'True' : `False`}_
-┗⬣`
+❒ 「 Bot Info 」 ❒
+❏Owner : *@${koko.split('@')[0]}*
+❏Battery : *${isBattre}*
+❏Mode : *${banChats ? 'SELF-MODE' : 'PUBLIC-MODE'}*
+❏Total Hit : *${hitall}*
+❏Prefix : *◤${prefix}◢*
+❏Nama : *${pushname}*
+❏Bio : *${p1 ? `${p1.status}` : '-'}*
+❏Nomor : *@${sender.split('@')[0]}*
+❏Api : *https://wa.me/${sender.split('@')[0]}*
+❏Jam : ${timuu}
+❏Hari : ${thisDay}
+❏Tanggal : ${ini_tanggal}
+❏Wib : ${timuu}
+❏Wita : ${wita}
+❏Wit : ${wit}`
 const buttons = [
   {buttonId: 'Command', buttonText: {displayText: '📖 Command'}, type: 1},
   {buttonId: 'ownerku', buttonText: {displayText: '🙍‍♂️ Owner'}, type: 1},
@@ -1865,7 +1852,7 @@ break
 											},
 										"type": "RESPONSE"
 										}]
-								sendButLocation(from, allmenu(prefix, wita, wit, ucapannya2 , timuu, status, wa_version, mcc, mnc, os_version, device_manufacturer, device_model, alfa , alfa1, thisDay, ini_tanggal, totalchat, hit_today, ini_gcchat), `NOTE ！\nJika whatsapp mod kamu belum support button silahkan tonton video ini https://youtu.be/ERGID4Fmo9w\n\n${botname}™© | By ${ownername}`,pp_userz, papao, {})
+								sendButLocation(from, allmenu(prefix, wita, wit, ucapannya2 , timuu, status, wa_version, mcc, mnc, os_version, device_manufacturer, device_model, alfa , alfa1, thisDay, ini_tanggal, totalchat, hit_today, ini_gcchat), ` `,pp_userz, papao, {})
                 break
         case 'trigger':
 					var imgbb = require('imgbb-uploader')
@@ -1902,7 +1889,41 @@ break
 					alpha.sendMessage(from, buffer, image, {caption : lang.success(),quoted: mek})
                    }
               break       
-				
+				case 'rules':
+var ini_gopay =`*── 「 RULES 」 ──*
+
+1. Jangan spam bot. 
+Sanksi: *WARN/SOFT BLOCK*
+
+2. Jangan telepon bot.
+Sanksi: *SOFT BLOCK*
+
+3. Jangan mengeksploitasi bot.
+Sanksi: *PERMANENT BLOCK*
+
+Jika sudah dipahami rules-nya, silakan pecet tombol command untuk memulai!`
+var buttonss = [
+{buttonId: 'Command', buttonText:{displayText: 'MENU'}, type: 1}
+]
+
+buttonMessagee = {
+contentText: ini_gopay,
+footerText: `_Speed ${latensii.toFixed(4)} Second_` ,
+buttons: buttonss,
+headerType: 1
+}
+alpha.sendMessage(from,  buttonMessagee, MessageType.buttonsMessage,{
+        caption: 'Botwea ©2k21',
+        "contextInfo": {
+            text: 'hi',
+            "forwardingScore": 1000000000,
+            isForwarded: true,
+            sendEphemeral: true,
+            "mentionedJid" : [sender]
+            },
+			quoted: mek,sendEphemeral: true 
+			})
+         break
 		case 'gay':
 		
 					var imgbb = require('imgbb-uploader')
@@ -2520,15 +2541,14 @@ case 'bcgif':
 					"displayName": `${ini_list.length} kontak`,
 					"contacts": ini_list 
 					}, 'contactsArrayMessage', { quoted: fkontak})
-					var ini_gopayy =`Halo @${sender.split("@")[0]} itu owner ku, jangan lupa donasi kak😇`
+					var ini_gopayy =`Halo @${sender.split("@")[0]} itu owner ku`
 var buttonss = [
-{buttonId: 'donasi_kak', buttonText:{displayText: 'Donasi'}, type: 1},
-{buttonId: 'sewa_kak', buttonText:{displayText: 'Sewa'}, type: 1}
+{buttonId: 'menu', buttonText:{displayText: 'MENU'}, type: 1},
 ]
 
 buttonMessagee = {
 contentText: ini_gopayy,
-footerText: `${tampilTanggal}\n${tampilWaktu}\n\n© ${creator}` ,
+footerText: ` ` ,
 buttons: buttonss,
 headerType: 1
 }
@@ -2541,7 +2561,7 @@ alpha.sendMessage(from,  buttonMessagee, MessageType.buttonsMessage,{
             sendEphemeral: true,
             "mentionedJid" : [sender]
             },
-			quoted: ftoko,sendEphemeral: true 
+			quoted: mek,sendEphemeral: true 
 			})
 					break
                 case 'sider':
@@ -3701,10 +3721,9 @@ break
 */
   
 			 case 'add':  
-			           if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
                     if (!isGroup) return reply(lang.onlygc())
-              //  if (!isGroupAdmins)return reply('```Only grup admins```')
-               // if (!isBotGroupAdmins) return reply('```Jadikan bot sebagai admin```')
+                if (!isGroupAdmins)return reply('```Only grup admins```')
+                if (!isBotGroupAdmins) return reply('```Jadikan bot sebagai admin```')
                 if (args.length < 1) return reply('Yang mau di add?')
 					if (args[0].startsWith('08')) return reply('Gunakan kode negara mas')
 					orang = args[0] + '@s.whatsapp.net'
@@ -3718,10 +3737,9 @@ alpha.sendMessage(from, orang, inv[0].invite_code, inv[0].invite_code_exp, group
 }
 					break 
 					case 'radd': case 'addreply':
-if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
 if (!isGroup) return reply(lang.onlygc())
-//if (!itsMe && !isGroupAdmins) return reply(mess.only.admin)
-//if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
+if (!itsMe && !isGroupAdmins) return reply(mess.only.admin)
+if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
 if (sen.message.extendedTextMessage === undefined || sen.message.extendedTextMessage === null) return reply('Reply pesan yg ingin di Add!')
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 mentions(`Perintah di terima, Add: @${mentioned[0].split('@')[0]}`, mentioned, true)
@@ -3729,9 +3747,8 @@ alpha.groupAdd(from, mentioned)
 break
 
 case 'kick':
-          if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
 if (!isGroup) return reply(lang.onlygc())
-//if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
+if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
 if(!q)return reply(`*Format salah!*\n\n*Example : ${prefix + command} @tag*`)
 if (!isBotGroupAdmins) return reply(mess.only.Badmin)
 yau = q.split('@')[1] + '@s.whatsapp.net'
@@ -3740,18 +3757,16 @@ reply(`Succses kick target!`)
 break
 
 case 'rkick': case 'kickreply':
-          if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
 if (!isGroup) return reply(lang.onlygc())
-//if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
+if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
 if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Reply pesan yg ingin di Kick!')
 mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 mentions(`Perintah di terima, mengeluarkan : @${mentioned[0].split('@')[0]}`, mentioned, true)
 alpha.groupRemove(from, mentioned)
 break
 			case 'antilink':
-			          if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
               if (!isGroup) return reply(lang.onlygc())
-              
+              if (!isBotGroupAdmins && !isGroupAdmins) return reply(lang.botNotAdm())
               if (args[0].toLowerCase() === 'on'){
               if (isAntiLink) return reply(lang.anjawaUdhOn(command))
               antilink.push(from)
@@ -6437,7 +6452,7 @@ let papako = [{
 											},
 										"type": "RESPONSE"
 										}]
-								sendButLocation(from, teks , `Thank for verification 💋\n${botname}™© | By ${ownername}`,pp_userz, papako, {contextInfo: { mentionedJid: [sender]}})
+								sendButLocation(from, teks , `Thank for verification 💋`,pp_userz, papako, {contextInfo: { mentionedJid: [sender]}})
                 }
 		
 if (budy.startsWith('x')){
