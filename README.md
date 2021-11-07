@@ -14,7 +14,7 @@
 
 -------
 
-## `ADD BUILDPACK`
+## `Deploy`
 
 ```
 > https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
