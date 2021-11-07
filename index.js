@@ -1683,6 +1683,7 @@ let papako = [{
 										}]
 								sendButLocation(from, teks , `Thank for verification 💋`,pp_userz, papako, {contextInfo: { mentionedJid: [sender]}})
                 break
+                
 	case 'menu1': case 'hwelp':
 			try {
 				chatt = await alpha.getProfilePicture(sender)
@@ -1854,6 +1855,16 @@ break
 										}]
 								sendButLocation(from, allmenu(prefix, wita, wit, ucapannya2 , timuu, status, wa_version, mcc, mnc, os_version, device_manufacturer, device_model, alfa , alfa1, thisDay, ini_tanggal, totalchat, hit_today, ini_gcchat), ` `,pp_userz, papao, {})
                 break
+                case 'darkjoes':  
+                   anu2 = await fetchJson(`https://api.zeks.me/api/darkjokes?apikey=${zeksApikey}`)
+                   anu3 = await getBuffer(anu2.result)
+                   alpha.sendMessage(from, anu3, image, {caption: `OK it's done`, quoted: mek})
+                   break
+                case 'meme':  
+                   anu = await fetchJson(`https://api.zeks.me/api/memeindo?apikey=${zeksApikey}`)
+                   anu1 = await getBuffer(anu.result)
+                   alpha.sendMessage(from, anu1, image, {caption: `OK it's done`, quoted: mek})
+                   break
         case 'trigger':
 					var imgbb = require('imgbb-uploader')
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
